@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools - DevToolsHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-code"></i>
+                <span>DevToolsHub</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="tools.html" class="nav-link active">Tools</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <button class="theme-toggle" id="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="tools-page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Developer Tools</h1>
+                <p>Convert and validate your data formats</p>
+            </div>
+
+            <div class="tool-tabs">
+                <button class="tab-btn active" data-tab="json-yaml">JSON ⇄ YAML</button>
+                <button class="tab-btn" data-tab="json-validator">JSON Validator</button>
+                <button class="tab-btn" data-tab="yaml-validator">YAML Validator</button>
+            </div>
+
+            <!-- JSON ⇄ YAML Converter -->
+            <div class="tool-content active" id="json-yaml">
+                <div class="converter-container">
+                    <div class="input-section">
+                        <div class="section-header">
+                            <h3>Input</h3>
+                            <select id="input-format">
+                                <option value="json">JSON</option>
+                                <option value="yaml">YAML</option>
+                            </select>
+                        </div>
+                        <textarea id="input-text" placeholder="Paste your JSON or YAML here..."></textarea>
+                    </div>
+                    <div class="convert-section">
+                        <button id="convert-btn" class="btn btn-primary">
+                            <i class="fas fa-exchange-alt"></i>
+                            Convert
+                        </button>
+                    </div>
+                    <div class="output-section">
+                        <div class="section-header">
+                            <h3>Output</h3>
+                            <button id="copy-btn" class="btn btn-secondary">
+                                <i class="fas fa-copy"></i>
+                                Copy
+                            </button>
+                        </div>
+                        <textarea id="output-text" readonly placeholder="Converted output will appear here..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JSON Validator -->
+            <div class="tool-content" id="json-validator">
+                <div class="validator-container">
+                    <div class="input-section">
+                        <h3>JSON Input</h3>
+                        <textarea id="json-input" placeholder="Paste your JSON here to validate..."></textarea>
+                        <button id="validate-json-btn" class="btn btn-primary">
+                            <i class="fas fa-check"></i>
+                            Validate JSON
+                        </button>
+                    </div>
+                    <div class="result-section">
+                        <h3>Validation Result</h3>
+                        <div id="json-result" class="result-box"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- YAML Validator -->
+            <div class="tool-content" id="yaml-validator">
+                <div class="validator-container">
+                    <div class="input-section">
+                        <h3>YAML Input</h3>
+                        <textarea id="yaml-input" placeholder="Paste your YAML here to validate..."></textarea>
+                        <button id="validate-yaml-btn" class="btn btn-primary">
+                            <i class="fas fa-check"></i>
+                            Validate YAML
+                        </button>
+                    </div>
+                    <div class="result-section">
+                        <h3>Validation Result</h3>
+                        <div id="yaml-result" class="result-box"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-code"></i>
+                    <span>DevToolsHub</span>
+                </div>
+                <p>&copy; 2025 DevToolsHub. Built with ❤️ for developers.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/tools.js"></script>
+</body>
+</html>
